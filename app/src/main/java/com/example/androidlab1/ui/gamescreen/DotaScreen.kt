@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,19 +33,15 @@ fun DotaScreen() {
 
     val comments = listOf(
         Comment(
-            "Auguste Conte",
-            "“Once you start to learn its secrets, " +
-                    "there’s a wild and exciting variety of play here that’s unmatched, " +
-                    "even by its peers.”",
-            "February 14, 2023",
+            stringResource(id = R.string.comment_1_author),
+            stringResource(id = R.string.comment_text),
+            stringResource(id = R.string.comment_date),
             painterResource(R.drawable.auguste_conte)
         ),
         Comment(
-            "Jang Marcelino",
-            "“Once you start to learn its secrets, there’s a wild and " +
-                    "exciting variety of play here that’s unmatched, even by " +
-                    "its peers.”",
-            "February 14, 2023",
+            stringResource(id = R.string.comment_2_author),
+            stringResource(id = R.string.comment_text),
+            stringResource(id = R.string.comment_date),
             painterResource(R.drawable.jang_marcelino)
         )
     )
@@ -63,10 +60,7 @@ fun DotaScreen() {
 
         item {
             Text(
-                text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has " +
-                        "two teams of five players compete to collectively destroy a large structure " +
-                        "defended by the opposing team known as the \"Ancient\", " +
-                        "whilst defending their own.",
+                text = stringResource(id = R.string.dota_desc),
                 color = AppTheme.TextColors.gray,
                 modifier = Modifier.padding(
                     start = 24.dp,
@@ -83,7 +77,7 @@ fun DotaScreen() {
 
         item {
             Text(
-                text = "Review & Ratings",
+                text = stringResource(id = R.string.review_and_ratings),
                 style = TextStyle(
                     fontSize = 16.sp,
                     fontWeight = FontWeight(700),
@@ -121,7 +115,7 @@ fun DotaScreen() {
 
         item {
             MainButton(
-                text = "Install",
+                text = stringResource(id = R.string.install),
                 onClick = {
                     Toast.makeText(context, "CLICKED", Toast.LENGTH_LONG).show()
                 },
