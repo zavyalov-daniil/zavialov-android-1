@@ -11,7 +11,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -68,7 +67,7 @@ fun DotaScreen() {
                         "two teams of five players compete to collectively destroy a large structure " +
                         "defended by the opposing team known as the \"Ancient\", " +
                         "whilst defending their own.",
-                color = Color(0xb2eef2fb),
+                color = AppTheme.TextColors.gray,
                 modifier = Modifier.padding(
                     start = 24.dp,
                     end = 24.dp,

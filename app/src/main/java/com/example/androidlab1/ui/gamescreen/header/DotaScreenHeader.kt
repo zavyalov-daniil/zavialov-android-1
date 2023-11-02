@@ -20,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidlab1.R
+import com.example.androidlab1.ui.theme.AppTheme
 
 @Composable
 fun DotaScreenHeader(
@@ -59,7 +60,7 @@ private fun DotaLogo() {
                 .clip(RoundedCornerShape(13.54.dp))
                 .border(
                     width = 1.935.dp,
-                    color = Color(0xFF1F2430),
+                    color = AppTheme.BgColors.border,
                     shape = RoundedCornerShape(13.54.dp)
                 )
                 .background(color = Color.Black)
@@ -80,7 +81,7 @@ private fun DotaLogo() {
 )
 fun DotaScreenHeaderPreview() {
     Surface(
-        color = Color(0xff050b18)
+        color = AppTheme.BgColors.primary
     ){
         DotaScreenHeader()
     }
