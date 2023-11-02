@@ -1,12 +1,13 @@
 package com.example.androidlab1.ui.gamescreen
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxHeight
+import android.widget.Toast
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Divider
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -24,14 +25,12 @@ import com.example.androidlab1.components.CommentBlock
 import com.example.androidlab1.components.MainButton
 import com.example.androidlab1.components.VideoPreview
 import com.example.androidlab1.ui.gamescreen.header.DotaScreenHeader
-import java.time.Instant
-import java.util.Date
+import com.example.androidlab1.ui.theme.AppTheme
 
 @Composable
-fun DotaScreen(
-    modifier: Modifier = Modifier
-) {
+fun DotaScreen() {
     val context = LocalContext.current
+
     val comments = listOf(
         Comment(
             "Auguste Conte",
@@ -50,11 +49,14 @@ fun DotaScreen(
             painterResource(R.drawable.jang_marcelino)
         )
     )
+    val previews = listOf(
+        painterResource(id = R.drawable.dota_video_1),
+        painterResource(id = R.drawable.dota_video_2)
+    )
 
     LazyColumn(
         modifier = Modifier
-            //.fillMaxHeight()
-            .background(color = Color(0xff050b18))
+            .fillMaxSize()
     ) {
         item {
             DotaScreenHeader()
@@ -77,20 +79,18 @@ fun DotaScreen(
         }
 
         item {
-            VideoPreview()
+            VideoPreview(previews)
         }
 
         item {
-            val a = painterResource(id = R.drawable.dota_header)
             Text(
                 text = "Review & Ratings",
                 style = TextStyle(
                     fontSize = 16.sp,
-                    //fontFamily = FontFamily(Font(R.font.sk-modernist)),
                     fontWeight = FontWeight(700),
                     letterSpacing = 0.6.sp,
                 ),
-                color = Color(0xFFEEF2FB),
+                color = AppTheme.TextColors.white,
                 modifier = Modifier.padding(
                     start = 24.dp,
                     end = 24.dp,
@@ -108,13 +108,12 @@ fun DotaScreen(
                     .padding(
                         start = 24.dp,
                         end = 24.dp,
-                        top = 28.dp,
-                        bottom = 48.dp,
+                        top = 16.dp,
                     )
             )
             if (index < comments.lastIndex) {
                 Divider(
-                    color = Color(0xFF1A1F29),
+                    color = AppTheme.BgColors.divider,
                     thickness = 1.dp,
                     modifier = Modifier.padding(top = 12.dp, bottom = 10.dp)
                 )
@@ -123,8 +122,11 @@ fun DotaScreen(
 
         item {
             MainButton(
-                "Install",
-                Modifier
+                text = "Install",
+                onClick = {
+                    Toast.makeText(context, "CLICKED", Toast.LENGTH_LONG).show()
+                },
+                modifier = Modifier
                     .fillMaxWidth()
                     .padding(
                         start = 24.dp,
@@ -141,5 +143,9 @@ fun DotaScreen(
 @Composable
 @Preview
 fun DotaScreenPreview() {
-    DotaScreen()
+    Surface(
+        color = AppTheme.BgColors.primary
+    ) {
+        DotaScreen()
+    }
 }

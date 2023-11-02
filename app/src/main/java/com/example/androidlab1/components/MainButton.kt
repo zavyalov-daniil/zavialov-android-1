@@ -2,7 +2,6 @@ package com.example.androidlab1.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -21,6 +20,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun MainButton(text: String,
+               onClick: () -> Unit,
                modifier: Modifier
 ) {
     Box(
@@ -28,7 +28,7 @@ fun MainButton(text: String,
         modifier = modifier.height(70.dp)
     ) {
         Button(
-            onClick = {},
+            onClick = onClick,
             colors = ButtonDefaults.buttonColors(
                 Color(0xfff4d144)
             ),
@@ -58,5 +58,10 @@ fun MainButton(text: String,
 @Composable
 @Preview
 fun DotaScreenPreview() {
-    MainButton("Install", Modifier.fillMaxWidth())
+    MainButton(
+        "Install",
+        onClick = {
+        },
+        Modifier.fillMaxWidth()
+    )
 }
