@@ -18,7 +18,8 @@ object AppTheme {
     }
 
     object ButtonColors {
-        val primary = Color(0x38F4D144)
+        val primary = Color(0xfff4d144)
+        val blur = Color(0x38F4D144)
     }
 
     object TextColors {

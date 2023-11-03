@@ -31,7 +31,7 @@ fun MainButton(text: String,
         Button(
             onClick = onClick,
             colors = ButtonDefaults.buttonColors(
-                Color(0xfff4d144)
+                AppTheme.ButtonColors.primary
             ),
             modifier = Modifier
                 .height(64.dp)
@@ -49,7 +49,7 @@ fun MainButton(text: String,
                 .blur(radius = 40.dp)
                 .size(311.dp, 50.dp)
                 .background(
-                    color = AppTheme.ButtonColors.primary,
+                    color = AppTheme.ButtonColors.blur,
                     shape = RoundedCornerShape(size = 10.dp)
                 )
         )
