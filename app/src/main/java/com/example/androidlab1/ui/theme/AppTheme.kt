@@ -14,6 +14,7 @@ object AppTheme {
         val primary = Color(0xff050b18)
         val divider = Color(0xFF1A1F29)
         val border = Color(0xFF1F2430)
+        val chip = Color(0x3D44A9F4)
     }
 
     object ButtonColors {
@@ -25,6 +26,7 @@ object AppTheme {
         val gray = Color(0xb2eef2fb)
         val comment = Color(0xFFA8ADB7)
         val date = Color(0x66FFFFFF)
+        val chip = Color(0xFF44A9F4)
     }
 
     object TextStyle {
