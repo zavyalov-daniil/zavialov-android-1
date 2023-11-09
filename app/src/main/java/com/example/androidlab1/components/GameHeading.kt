@@ -25,8 +25,10 @@ import com.example.androidlab1.R
 import com.example.androidlab1.ui.theme.AppTheme
 
 @Composable
-fun GameHeading(name: String, downloads: String) {
-    Column {
+fun GameHeading(name: String, downloads: String, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+    ) {
         Text(
             text = name,
             fontSize = 20.sp,

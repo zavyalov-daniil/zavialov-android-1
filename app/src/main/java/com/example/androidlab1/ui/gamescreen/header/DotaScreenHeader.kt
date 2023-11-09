@@ -17,9 +17,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidlab1.R
+import com.example.androidlab1.components.GameHeading
 import com.example.androidlab1.ui.theme.AppTheme
 
 @Composable
@@ -39,19 +41,20 @@ fun DotaScreenHeader(
                 .height(327.dp)
                 .fillMaxWidth()
         )
-        Box(
-            modifier = Modifier.offset(21.dp, 265.dp)
-        ) {
-            DotaLogo()
-        }
+        DotaLogo(Modifier.offset(21.dp, 265.dp))
+        GameHeading(
+            name = stringResource(id = R.string.dota_2),
+            downloads = stringResource(id = R.string.downloads),
+            modifier = Modifier.offset(124.dp, 298.dp)//308.dp)
+        )
     }
 
 }
 
 @Composable
-private fun DotaLogo() {
+private fun DotaLogo(modifier: Modifier = Modifier) {
     Box(
-        modifier = Modifier.size(88.dp, 95.dp)
+        modifier = modifier.size(88.dp, 95.dp)
     ) {
         Box(
             contentAlignment = Alignment.Center,
