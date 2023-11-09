@@ -26,6 +26,7 @@ import com.example.androidlab1.components.MainButton
 import com.example.androidlab1.components.VideoPreview
 import com.example.androidlab1.ui.gamescreen.chips.ChipsRow
 import com.example.androidlab1.ui.gamescreen.header.DotaScreenHeader
+import com.example.androidlab1.ui.gamescreen.rating.GameRating
 import com.example.androidlab1.ui.theme.AppTheme
 
 @Composable
@@ -106,7 +107,18 @@ fun DotaScreen() {
                     start = 24.dp,
                     end = 24.dp,
                     top = 28.dp,
-                    bottom = 16.dp
+                    bottom = 12.dp
+                )
+            )
+        }
+
+        item {
+            GameRating(
+                score = 4.9,
+                reviewCount = stringResource(id = R.string.reviews),
+                modifier = Modifier.padding(
+                    start = 24.dp,
+                    bottom = 6.dp
                 )
             )
         }
