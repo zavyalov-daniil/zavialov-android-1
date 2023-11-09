@@ -31,31 +31,33 @@ import com.example.androidlab1.R
 fun VideoPreview(
     previews: List<Painter>
 ) {
-    Row(
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
-        modifier = Modifier
-            .padding(
-                start = 24.dp,
-                top = 4.dp,
-                bottom = 4.dp
-            )
-            .horizontalScroll(state = ScrollState(0))
-    ) {
-        for (preview in previews) {
-            Image(
-                painter = preview,
-                contentDescription = null,
-                contentScale = ContentScale.FillBounds,
-                modifier = Modifier
-                    .width(242.dp)
-                    .height(138.dp)
-                    .clip(RoundedCornerShape(size = 14.dp))
-            )
+    Box() {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier
+                .padding(
+                    start = 24.dp,
+                    top = 4.dp,
+                    bottom = 4.dp
+                )
+                .horizontalScroll(state = ScrollState(0))
+        ) {
+            for (preview in previews) {
+                Image(
+                    painter = preview,
+                    contentDescription = null,
+                    contentScale = ContentScale.FillBounds,
+                    modifier = Modifier
+                        .width(242.dp)
+                        .height(138.dp)
+                        .clip(RoundedCornerShape(size = 14.dp))
+                )
+            }
         }
+        VideoButton(
+            modifier = Modifier.offset(120.dp, 43.dp)
+        )
     }
-    VideoButton(
-        modifier = Modifier.offset(120.dp, 43.dp)
-    )
 }
 
 @Composable
