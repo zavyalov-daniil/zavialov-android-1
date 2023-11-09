@@ -9,4 +9,7 @@
     <string name="install">Install</string>
     <string name="dota_2">DoTA 2</string>
     <string name="downloads">70M</string>
+    <string name="mova">MOVA</string>
+    <string name="multiplayer">MULTIPLAYER</string>
+    <string name="strategy">STRATEGY</string>
 </resources>

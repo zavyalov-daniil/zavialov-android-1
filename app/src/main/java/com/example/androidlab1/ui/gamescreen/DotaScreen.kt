@@ -24,6 +24,7 @@ import com.example.androidlab1.R
 import com.example.androidlab1.components.CommentBlock
 import com.example.androidlab1.components.MainButton
 import com.example.androidlab1.components.VideoPreview
+import com.example.androidlab1.ui.gamescreen.chips.ChipsRow
 import com.example.androidlab1.ui.gamescreen.header.DotaScreenHeader
 import com.example.androidlab1.ui.theme.AppTheme
 
@@ -49,6 +50,11 @@ fun DotaScreen() {
         painterResource(id = R.drawable.dota_video_1),
         painterResource(id = R.drawable.dota_video_2)
     )
+    val chips = listOf(
+        stringResource(id = R.string.mova),
+        stringResource(id = R.string.multiplayer),
+        stringResource(id = R.string.strategy),
+    )
 
     LazyColumn(
         modifier = Modifier
@@ -56,6 +62,18 @@ fun DotaScreen() {
     ) {
         item {
             DotaScreenHeader()
+        }
+
+        item {
+            ChipsRow(
+                items = chips,
+                modifier = Modifier
+                    .padding(
+                        top = 16.dp,
+                        bottom = 16.dp,
+                        start = 24.dp
+                    )
+            )
         }
 
         item {
