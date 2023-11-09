@@ -59,7 +59,7 @@ private fun DotaLogo() {
                 .size(88.dp)
                 .clip(RoundedCornerShape(13.54.dp))
                 .border(
-                    width = 1.935.dp,
+                    width = 2.dp,
                     color = AppTheme.BgColors.border,
                     shape = RoundedCornerShape(13.54.dp)
                 )

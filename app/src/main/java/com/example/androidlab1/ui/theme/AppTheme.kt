@@ -28,6 +28,7 @@ object AppTheme {
         val comment = Color(0xFFA8ADB7)
         val date = Color(0x66FFFFFF)
         val chip = Color(0xFF44A9F4)
+        val downloads = Color(0xFF45454D)
     }
 
     object TextStyle {
